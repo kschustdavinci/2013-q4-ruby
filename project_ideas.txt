@@ -1,4 +1,19 @@
 Some project ideas:
-- 
-- 
-- 
+For work, replace defunct PHP-based "MSSD Account Page (MAP)" application with updated Ruby-on-Rails application.
+Appl is used to:
+	create/modify customer records [parent & child]
+		add attributes via selection lists + text entry
+		mark customer record closed (reopen)
+		associate specific services with a customer  [category + subcategory(ies)]
+		maintain a history of changes
+	create/modify associated devices
+		add attributes via selection lists + text entry
+		group devices
+		mark device as decommissioned; dispose of device (reopen)
+		maintain a history of changes
+	generate on-line reports, including option to include HTML tags
+	search capability + history (as links)
+	
+Embellishments:
+	customer aliases - enabling child to be assoc'd with alternate parent
+
