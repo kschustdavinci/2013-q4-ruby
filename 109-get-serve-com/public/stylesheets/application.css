@@ -1,3 +1,58 @@
 body {
   font-family: sans-serif;
 }
+
+a {
+	color: red;
+}
+
+.btn_green {
+	background-color: green;
+}
+
+h2 {
+	color: white;
+	font-size: 8pt;
+	font-weight: normal;
+}
+
+h3 {
+	color: red;
+	font-size: 8pt;
+	font-weight: normal;
+}
+
+.jumbotron {
+	background-color: white;
+}
+
+.jumbotron h1 {
+  font-size: 14pt;
+}
+
+.jumbotron ul {
+  font-size: 8pt;
+}
+
+.list_pad {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.navbar-brand {
+  color: white;
+  font-family: "Banks Script";
+  font-size: 35pt;
+}
+
+.navbar-inverse {
+   background-color: #700000;
+}
+
+.panel_ltblue {
+  background-color: #C2DFFF;
+}
+
+.panel_ltred {
+  background-color: #FFCCCC;
+}
