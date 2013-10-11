@@ -10,3 +10,41 @@ body {
   font-family: sans-serif;
   font-size: 16pt;
 }
+
+.whiteonblack {
+	color: white;
+	background-color: black;
+}
+
+.thickborder {
+	border: 10px black solid;
+	padding: 10px;
+}
+
+.smallnarrow {
+/*	border: 1px black solid; */
+	width:30px;
+	height:100px;
+	margin:20px auto 20px 100px;
+	font-size:8pt;
+}
+
+.bigspace {
+	border: 1px black solid;
+	padding: 100px;
+}
+
+.ctrbox {
+	width:120px;
+	height:120px;
+    padding: 10px;
+	margin: auto;
+}
+
+.shadow {
+/*	border: 1px blue solid; */
+	color: white;
+	box-shadow: 0px 0px 20px blue;
+	text-shadow: 0px 0px 8px blue;
+	padding: 9px;
+}
