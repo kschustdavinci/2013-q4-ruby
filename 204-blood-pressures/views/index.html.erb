@@ -1,3 +1,19 @@
 <h1>Blood pressure readings</h1>
 
-<!-- TODO: fill this in -->
+<table border="1" class="table table-striped">
+	<tr>
+		 <th>id</th>
+	   <th>name</th>
+	   <th>systolic</th>
+	   <th>diastolic</th>
+	</tr>
+	
+	<% Pressure_reading.order(:id).each do |pressure_reading| %>
+		<tr>
+			<td><%= pressure_reading.id %></td>
+			<td><%= pressure_reading.name %></td>
+			<td><%= pressure_reading.systolic %></td>
+			<td><%= pressure_reading.diastolic %></td>
+		</tr>
+	<% end %>
+</table>
