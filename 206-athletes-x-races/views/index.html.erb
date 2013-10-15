@@ -1,3 +1,19 @@
 <h1>Track &amp; Field race times</h1>
 
-<!-- TODO: fill this out -->
+<table border="1" class="table">
+	<tr>
+		 <th></th>
+	   <th>100-meter dash</th>
+	   <th>10K run</th>
+	   <th>400-meter dash</th>
+	</tr>
+	
+	<% Race_time.order(:id).each do |race_time| %>
+		<tr>
+			<th><%= race_time.person_name %></th>
+			<td><%= race_time.time_100_m %> sec</td>
+			<td><%= race_time.time_10_k %> sec</td>
+			<td><%= race_time.time_400_m %> sec</td>
+		</tr>
+	<% end %>
+</table>
