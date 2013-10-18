@@ -4,4 +4,8 @@ get "/" do
   halt erb(:index)
 end
 
-# TODO: write handler for detail pages route
+get "/ufos/:id" do
+  id = params[:id]
+  @ufo = UfoSighting.find(id)
+  halt erb(:show)
+end
