@@ -1,3 +1,24 @@
 <h1>Edit or add new goat</h1>
 
-<!-- TODO: write this part based on the mockup -->
+<table form = "table" >
+	<tr>
+		<th><%= label_tag "name" %></th>
+		<td><%= text_field_tag "name", @goat.name %></td>
+	</tr>
+	<tr>
+		<th><%= label_tag "gender" %></th>
+		<td><%= text_field_tag "gender", @goat.gender %></td>
+	</tr>
+	<tr>
+		<th><%= label_tag "best 100 meter time" %></th>
+		<td><%= text_field_tag "best_time", @goat.best_100m_time %></td>
+	</tr>
+	<tr>
+		<th><%= label_tag "dietary preference" %></th>
+		<td><%= text_field_tag "diet", @goat.dietary_preference %></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td><%= submit_tag "Save" %></td>
+	</tr>
+</table>
