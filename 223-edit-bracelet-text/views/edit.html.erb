@@ -1,1 +1,9 @@
-<!-- TODO: write this to look like the mockup -->
+<h3><%= label_tag "font_size" %></h3>
+<%= text_field_tag "font_size", @line.font_size %> (between 8 and 12)
+
+<h3><%= label_tag "text" %></h3>
+<%= text_field_tag "text", @line.text %>
+
+<br>
+<br>
+<%= submit_tag "Update" %>
