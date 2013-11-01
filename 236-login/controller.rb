@@ -10,6 +10,21 @@ end
 #      (Bonus: pre-fill the username that the user entered last time)
 #   3. Or redirects to /success
 
+post "/" do
+  @old_username = params["username"]
+  pin    = params["pin_number"]
+  user   = User.find_by(username: @old_username)
+  if user == nil
+    @error = "Unknown username"
+    halt erb(:login)
+  elsif pin != user.pin_number
+    @error = "Wrong pin number"
+    halt erb(:login)
+  else
+    redirect "/success"
+  end
+end
+
 get "/success" do
   halt erb(:success)
 end
