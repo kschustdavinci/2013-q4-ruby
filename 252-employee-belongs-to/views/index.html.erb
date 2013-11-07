@@ -15,18 +15,29 @@
       <td><%= e.id %></td>
       <td><%= e.first_name %></td>
       <td><%= e.last_name %></td>
-      <td>TODO</td>
+<!-- # <td>TODO</td>  -->
+			<td><% if e.company != nil %>
+							 <%= e.company.name %> (<%= e.company.stock_symbol %>)
+					<% else %>
+							 None
+					<% end %>
+			</td>
     </tr>
   <% end %>
 
-  <tr>
-    <td>(new)</td>
-    <td><%= text_field_tag "first_name", @new_employee.first_name,
-      size: 10 %></td>
-    <td><%= text_field_tag "last_name", @new_employee.last_name,
-      size: 10 %></td>
-    <td>TODO</td>
-    <td><%= submit_tag "Add" %></td>
-  </tr>
+  <tr>	  																														
+    <td>(new)</td>			  																						  
+    <td><%= text_field_tag "first_name", @new_employee.first_name,  
+      size: 10 %></td>   	  
+    <td><%= text_field_tag "last_name", @new_employee.last_name,  
+      size: 10 %></td>  	  
+<!-- # <td>TODO</td>  -->
+	  <td><%= select_tag "company", 
+			  	options_from_collection_for_select(
+					Company.order(:name), :id, :name, @new_employee.company_id),
+					prompt: "(Choose company)",  
+	      size: 10 %></td>  																					  
+    <td><%= submit_tag "Add" %></td>  	  
+  </tr>  	  
 
 </table>
