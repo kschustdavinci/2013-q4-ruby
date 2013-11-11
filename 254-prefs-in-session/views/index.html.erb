@@ -1,1 +1,20 @@
 <!-- TODO: Write HTML and ERb to match the mockup -->
+<%= label_tag "fav_color", "Favorite color" %>
+<p><%= select_tag "fav_color", options_for_select(
+		 ["blue", "green", "red", "yellow"], @color), prompt: "Choose a color" %></p>
+		 
+<%= label_tag "fav_letter", "Favorite letter" %>
+<p>
+	<%= radio_button_tag "fav_letter", "A", @letter == "A" %> A
+	<%= radio_button_tag "fav_letter", "B", @letter == "B" %> B 
+	<%= radio_button_tag "fav_letter", "C", @letter == "C" %> C
+</p>
+
+<%= label_tag "fav_number", "Favorite number" %>
+<p><%= text_field_tag "fav_number", @number %></p>
+
+<p><%= submit_tag "Update preferences" %></p>
+
+<p><a href="/logout">Logout</a></p>
+	
+	
