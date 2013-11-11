@@ -6,3 +6,13 @@
   <b>Name</b><br>
   <%= @team.name %>
 </p>
+
+<p>
+  <b>Players</b><br>
+	<% players = Player.where(team_id: @team.id)%>
+	<% players.each do |player| %>
+		<ul>
+			<li><%= player.name %></li>
+		</ul>
+	<% end %>
+</p>
