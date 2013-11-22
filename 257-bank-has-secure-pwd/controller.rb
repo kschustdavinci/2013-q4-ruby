@@ -29,20 +29,21 @@ post "/login" do
     halt erb(:login)
 
   # Otherwise, if the password was wrong...
-  elsif password != found_user.password
-    # Then set a message to show at the top of the page
-    @error = "Incorrect password"
-
-    # And render the login page again
-    halt erb(:login)
-
-  # Otherwise... (if the username and password was right)
-  else
+  elsif found_user.authenticate(password) != false
     # Save that user's id into the session so we'll have it later
     session[:user_id] = found_user.id
 
     # Redirect to the default page
     redirect "/accounts"
+    
+    # Otherwise... (if the username and password is wrong)
+  else
+    # Then set a message to show at the top of the page
+    @error = "Incorrect password"
+
+    # And render the login page again
+    halt erb(:login)
+    
   end # End if
 end # End handler
 
