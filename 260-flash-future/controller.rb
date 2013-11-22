@@ -23,16 +23,16 @@ post "/login" do
   # If no row was found for that username...
   if found_user == nil
     # TODO: Change this to a flash message, so it survives the redirect
-    @error = "Unknown username"
+    flash[:error] = "Unknown username"
 
-    halt erb(:login) # TODO: Change this to redirect instead of rendering
+    redirect "/login" # TODO: Change this to redirect instead of rendering
 
   # Otherwise, if the password was wrong...
   elsif found_user.authenticate(password) == false
     # TODO: Change this to a flash message, so it survives the redirect
-    @error = "Incorrect password"
+    flash[:error] = "Incorrect password"
 
-    halt erb(:login) # TODO: Change this to redirect instead of rendering
+    redirect "/login" # TODO: Change this to redirect instead of rendering
 
   # Otherwise... (if the username and password was right)
   else
@@ -51,12 +51,16 @@ get "/welcome" do
   user_id = session[:user_id]
   # Load the user based on that id saved to the session
   @user = User.find(user_id)
+  
+  flash[:success] = "You've been logged in"
   halt erb(:welcome)
 end
 
 get "/logout" do
   # Remove the user id from the session and everything else
   session.clear
+  
+  flash[:notice] = "You've been logged out"
 
   # TODO: Tell the user "You have successfully logged out" once after logout.
 

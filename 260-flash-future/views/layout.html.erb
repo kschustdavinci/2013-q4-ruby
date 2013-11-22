@@ -12,6 +12,16 @@
         <%= flash[:error] %>
       </div>
     <% end %>
+    <% if flash[:success] != nil %>
+      <div class="alert alert-success">
+        <%= flash[:success] %>
+      </div>
+    <% end %>
+    <% if flash[:notice] != nil %>
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 
     <%# non-block form is needed to adapt Rails form helpers to Sinatra %>
     <%# request.path_info means POST action should be same as the GET URL %>
